@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { render } from '@testing-library/react';
+import { CardList } from './components/card-list/card-list.component.jsx';
 
 
 class App extends Component {
@@ -8,20 +8,7 @@ class App extends Component {
     super();
 
     this.state = {
-     monsters: [
-       {
-         name: 'Frankenstein',
-         id: '1'
-       },
-       {
-         name: 'Zombie',
-         id: '2'
-       },
-       {
-         name: 'Banshee',
-         id: '3'
-       },
-     ]
+     monsters: []
     };
   }
 
@@ -32,14 +19,11 @@ class App extends Component {
     }
  
   render() {
-  return (
-    <div className="App">
-      {
-        this.state.monsters.map(monsters => <h1>{monsters.name}</h1>
-        )}
-
-    </div>
-  );
-}
+    return (
+      <div className='App'>
+        <CardList monsters= {this.state.monsters}/>
+      </div>
+    );
+  }
 }
 export default App;
